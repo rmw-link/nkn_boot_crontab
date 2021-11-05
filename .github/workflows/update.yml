@@ -35,7 +35,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
     - run: |
-        gitsrc=https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rmw-link/nkn_boot.git
+        gitsrc=https://x-access-token:${{ secrets.TOKEN }}@github.com/rmw-link/nkn_boot.git
         git clone $gitsrc data --depth=1
         npm config set registry https://registry.npm.taobao.org
         ./update.sh
