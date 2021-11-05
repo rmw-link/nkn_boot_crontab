@@ -1,0 +1,36 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {},
+    "prefix": "/Users/z/rmw/nkn_boot"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/z/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/z/rmw/nkn_boot/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/z/rmw/nkn_boot",
+    "stage": "resolution_started"
+  },
+  "4 error pnpm": {
+    "code": "ERR_PNPM_FETCH_404",
+    "hint": "nkn-sdk-js is not in the npm registry, or you have no permission to fetch it.\n\nNo authorization header was set for the request.",
+    "request": {
+      "url": "https://registry.npmmirror.com/nkn-sdk-js"
+    },
+    "response": {
+      "size": 0
+    },
+    "pkgName": "nkn-sdk-js",
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "GET https://registry.npmmirror.com/nkn-sdk-js: Not Found - 404",
+      "code": "ERR_PNPM_FETCH_404",
+      "stack": "pnpm: GET https://registry.npmmirror.com/nkn-sdk-js: Not Found - 404\n    at RetryOperation._fn (/Users/z/git/mac/home/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:84852:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+    }
+  }
+}

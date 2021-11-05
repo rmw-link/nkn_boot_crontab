@@ -1,0 +1,4 @@
+node_modules/
+/ip.db-*
+/data/
+

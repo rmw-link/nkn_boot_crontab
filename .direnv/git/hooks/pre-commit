@@ -1,0 +1,7 @@
+#!/bin/sh
+
+#npx md-include .markdown.json
+nr prepare
+git add -u
+
+

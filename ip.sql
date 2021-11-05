@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS "nkn_boot" (
+	"id"	INTEGER NOT NULL,
+	"ctime"	INTEGER NOT NULL DEFAULT (strftime('%s','now')),
+	"utime"	INTEGER NOT NULL DEFAULT (strftime('%s','now')),
+	"ok"	INTEGER NOT NULL DEFAULT 1,
+	"err"	INTEGER NOT NULL DEFAULT 0,
+	"rank"	SHORT NOT NULL DEFAULT 0,
+	"addr"	BLOB NOT NULL UNIQUE,
+	"delay"	INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)

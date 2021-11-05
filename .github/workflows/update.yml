@@ -1,0 +1,46 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '59 0 * * *'
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [17.0.1]
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 6.20.3
+    - name: node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+    - run: npm config set registry https://registry.npm.taobao.org
+    - run: |
+        ./update.sh
+        cd data
+        git config --global user.name 'gcxfd'
+        git config --global user.email 'i@rmw.link'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$gitlib
+        git add -u
+        git commit -m'update'
+        git push
