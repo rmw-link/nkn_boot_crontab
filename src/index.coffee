@@ -76,7 +76,7 @@ do =>
       catch err
         console.log "❌",id,ip_port,err
         host_err.run id
-        continue
+        break
       console.log n
       if n > 2048 or (++n) % 5 == 0
         break
